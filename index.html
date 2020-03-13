@@ -1,0 +1,58 @@
+<html>
+
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="card" id="title">
+        <header>{{ title }}</header>
+        <!--Mustaches cannot be used inside HTML attributes. Instead, use a v-bind directive:-->
+        <div v-html="content"></div>
+    </div>
+    <!--hr-->
+    <div class="card" id="words" >
+    <header>{{ title | capitalize  }}</header>
+        <div  style="text-align:center;">
+            <form v-on:submit="addItem">
+                <span>EN</span><input v-model="input_en">
+                <span>EO</span><input v-model="input_eo">
+                <button>Add word</button>
+            </form>
+            <table align="center" style="text-align:center;"  v-if="items.length > 0">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>English</th>
+                        <th>Esperanto</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="(item, index) in items">
+                        <td><button v-on:click="deleteItem(index)">X</button></td>
+                        <td>{{item.text_en | uppercase}}</td>
+                        <td>{{item.text_eo | undercase}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div >
+                <p>There is {{totalWords}} definitions in the dictionary.</p>
+                <div v-for="part in parts">
+                    <words-counter v-bind:name=part></words-counter>{{ returnCount(part) }}
+                </div>
+
+                <!--p>There is {{totalWords}} words in the dictionary.</p>
+                <p>There is {{totalNouns}} nouns in the dictionary.</p>
+                <p>There is {{totalVerbs}} verbs in the dictionary.</p>
+                <p>There is {{totalAdjectives}} adjectives in the dictionary.</p-->
+            </div>
+        </div>
+    </div>
+
+      
+
+  <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+body {
+    padding: 2em;
+    font-family: sans-serif;
+  }
+  
+  .card {
+    border: 2px solid Gray;
+    border-radius: 10px;
+    margin: 20px; 
+  }
+  
+  .card header {
+    display: block;
+    border-radius: 8px 8px 0 0;
+    background: #42b983;
+    padding: 10px;
+    color: white;
+    font-size: 1.5em;
+
+  }
+  
+  .card div {
+    padding: 1em;
+  }
+  
+  span, form {
+    padding: 1em;
+  }
+  table {
+    border: 2px solid #42b983;
+    border-radius: 3px;
+    background-color: #fff;
+  }
+  th {
+    background-color: #42b983;
+    color: rgba(255,255,255,0.66);
+  }
+  
+  td {
+    background-color: #f9f9f9;
+  }
+  
+  th, td {
+    min-width: 120px;
+    padding: 10px 20px;
+  }
+  button{
+    background-color: #42b983;
+    color: rgba(255,255,255,0.66);
+    cursor: pointer;
+    font-family: sans-serif;
+    font-size: 17;
+  }
